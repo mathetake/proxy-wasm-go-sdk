@@ -71,6 +71,7 @@ func (ctx *httpHeaders) OnHttpResponseHeaders(numHeaders int, endOfStream bool) 
 	for _, h := range hs {
 		proxywasm.LogInfof("response header <-- %s: %s", h[0], h[1])
 	}
+	_ = proxywasm.SetHttpResponseHeaders(types.Headers{})
 	return types.ActionContinue
 }
 
